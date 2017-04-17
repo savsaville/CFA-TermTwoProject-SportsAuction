@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Sportauction</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +10,8 @@
   </head>
 
   <body>
+    <%= render 'partials/navbar' %>
+  	<div class="container">
     <%= yield %>
   </body>
 </html>

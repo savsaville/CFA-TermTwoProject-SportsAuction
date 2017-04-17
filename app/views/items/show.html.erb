@@ -22,3 +22,12 @@
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+<%= render 'comments/form', comment: @comment %>
+
+<% @comments.each do |comment| %>
+  <p> <%= comment.user.email %> </p>
+  <p> <%= comment.created_at.strftime('%b %d, %Y') %> </p>
+  <p> <%= comment.content %> </p>
+
+<% end %>

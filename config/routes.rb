@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+
+  get 'contact/mail'
+
+  resources :comments
   devise_for :users
   root'pages#home'
 
