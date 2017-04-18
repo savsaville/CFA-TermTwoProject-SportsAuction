@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bids
   get 'contact', to: "contact#index"
 
   post 'contact', to: "contact#mail"

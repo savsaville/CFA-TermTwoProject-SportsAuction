@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(".dropdown-button").dropdown();
+//= require materialize-sprockets
+
+
+$( document ).ready(function(){
+	$(".dropdown-button").dropdown();
+})

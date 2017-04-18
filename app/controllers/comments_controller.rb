@@ -29,10 +29,10 @@ class CommentsController < ApplicationController
     @item = Item.find(params[:item_id])
     @comment.item_id = @item.id
 
-    
+
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to item_path(@comment.item), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }

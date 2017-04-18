@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417002006) do
+ActiveRecord::Schema.define(version: 20170418020639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "bid_amount"
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_bids_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_bids_on_user_id", using: :btree
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -30,8 +40,14 @@ ActiveRecord::Schema.define(version: 20170417002006) do
     t.text     "description"
     t.integer  "starting_price"
     t.datetime "end_time"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +67,9 @@ ActiveRecord::Schema.define(version: 20170417002006) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bids", "items"
+  add_foreign_key "bids", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "items", "users"
 end
