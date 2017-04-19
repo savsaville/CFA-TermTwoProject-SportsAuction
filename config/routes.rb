@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   post 'contact', to: "contact#mail"
 
   resources :items do
+      resources :auctions, only: [ :create ] do
+        resources :bids, only: [ :create ]
+    end
+    member do
+      put :transfer
+    end
     resources :comments
   end
 
