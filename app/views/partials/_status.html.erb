@@ -2,7 +2,7 @@
   <% if @item.auction.top_bid.user_id == current_user.id %>
     <p>You won the Auction!</p>
     <p>
-      <%= link_to "Claim this product", transfer_item_path(@item), class: "btn btn-primary", method: :put %>
+      <%= link_to "Buy now", transfer_item_path(@item), class: "btn btn-primary", method: :put %>
     </p>
   <% else %>
     <p>You lost the auction :(</p>

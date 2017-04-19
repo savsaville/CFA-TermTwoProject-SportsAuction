@@ -1,5 +1,5 @@
 class Auction < ApplicationRecord
-  belongs_to :item, optional: true 
+  belongs_to :item, optional: true
   has_many :bids, :dependent => :destroy
 
   def top_bid

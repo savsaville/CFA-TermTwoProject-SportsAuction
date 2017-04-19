@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :charges
 
   devise_for :users
   root'pages#home'
