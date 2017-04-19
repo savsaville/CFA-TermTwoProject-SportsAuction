@@ -1,0 +1,17 @@
+<% unless @item.has_auction? %>
+
+    <h4>put this product to auction</h4>
+
+    <%= form_for [ @item, Auction.new ] do |f| %>
+    <p>
+      <%= f.label :value %>
+      <%= f.text_field :value %>
+    </p>
+    <p>
+      <%= f.label :end_at %>
+      <%= f.datetime_local_field :end_at %>
+      <%= f.button 'Create Auction'%>
+    </p>
+
+    <% end %>
+<% end %>

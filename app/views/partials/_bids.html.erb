@@ -1,0 +1,39 @@
+<% if @item.has_auction? %>
+  <% if @item.auction.ended? %>
+    <%= render 'partials/status' %>
+  <% else %>
+    <%= form_for [ @item, @item.auction, Bid.new ], html: { multipart: true } do |f| %>
+      <p>
+        <% if @item.auction.top_bid %>
+          <% if @item.auction.top_bid.user_id == current_user.id %>
+            <strong>
+              Current Bid:
+            </strong>
+              AUD$ <%= @item.auction.current_bid %>
+          <% else %>
+            <strong>
+              You were outbid:
+            </strong>
+              AUD$ <%= @item.auction.current_bid %>
+          <% end %>
+          <% else %>
+            <strong>
+              Minimum bid is:
+            </strong>
+              $ <%= @item.auction.current_bid %>
+      <% end %>
+      </p>
+
+
+      <p>
+          <strong>
+              Ends at:
+          </strong>
+          <%= l(@item.auction.end_at, format: :short) %>
+      </p>
+      <%= f.text_field :value %>
+      <%= f.button 'Place Bid'%>
+
+      <% end %>
+    <% end %>
+  <% end %>

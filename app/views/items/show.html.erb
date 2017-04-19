@@ -12,18 +12,11 @@
   <%= @item.description %>
 </p>
 
-<p>
-  <strong>Starting price:</strong>
-  <%= @item.starting_price %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @item.end_time %>
-</p>
-
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+<%= render 'partials/auction' %>
+<%= render 'partials/bids' %>
 
 <%= render 'comments/form', comment: @comment %>
 
