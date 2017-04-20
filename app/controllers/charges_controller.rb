@@ -3,8 +3,11 @@ class ChargesController < ApplicationController
     end
 
     def create
-    @auction = Auction.find(params[:id])
-    @value = @item.auction.current_bid
+      @item = Item.find(params[:id])
+      @auction = @item.auction
+      @amount = (@item.auction.current_bid * 100).to_i
+    # @auction = Auction.find(params[:item_id])
+    # @value = @item.auction.current_bid
     # # Amount in cents
     # @amount = (@booking.room.price * 100).to_i
 
@@ -15,17 +18,18 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @value,
-      :description => "Booking id: #{@booking.id}",
+      :amount      => @amount,
+      :description => "Your money went to charity.. I think",
       :currency    => 'aud'
     )
 
-
-    @transaction = Transaction.create(amount: @amount, user_id: current_user.id, booking_id: @booking.id)
-
     rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path(r: @booking.room.id)
+    redirect_to new_charge_path
     end
 
+    def confirmation
+      @item = Item.find(params[:id])
+      @auction = @item.auction
+    end
 end

@@ -10,9 +10,15 @@ Rails.application.routes.draw do
     end
     member do
       put :transfer
+      resources :charges do
+          member do
+            get 'confirmation', to: 'charges#confirmation'
+          end
+      end
     end
     resources :comments
   end
+
 
 
   devise_for :users
