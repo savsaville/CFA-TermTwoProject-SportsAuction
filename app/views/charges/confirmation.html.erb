@@ -1,0 +1,7 @@
+<%= @auction.inspect %>
+
+<h1>You have been lucky enough to win this amazing item!</h1>
+
+<%= image_tag @item.image.url(:large) %>
+
+<%= render 'partials/stripe' %>
