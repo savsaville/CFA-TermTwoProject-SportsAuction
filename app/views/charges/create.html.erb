@@ -1,1 +1,7 @@
-<h2>Thanks, you paid <strong>"$<%=@item.auction.current_bid %>"</strong>!</h2>
+<h2>Thanks, you paid <strong>$<%=@item.auction.current_bid %></strong></h2>
+
+<h2>This money will be going out to *enter charity potentially here*, while this amazing item will be shipped out to you.</h2>
+
+<h2>Please click this button, and email us your address and we will ship it out to you as soon as we can.</h2>
+
+   <%= link_to "Contact Us", contact_path, class: "btn btn-primary", method: :put %>
