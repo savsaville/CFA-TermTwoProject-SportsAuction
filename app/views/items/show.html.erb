@@ -1,28 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
 
-<%= image_tag @item.image.url(:medium) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= image_tag @item.image.url(:medium) %>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Click Here to Bid!<i class="material-icons right">more_vert</i></span>
+      <p>Current Bid: AUD$ <%= @item.auction.current_bid %></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= @item.title %><i class="material-icons right">close</i></span>
 
-<%= render 'partials/auction' %>
-<%= render 'partials/bids' %>
+      <p>
+        <%= render 'partials/auction' %>
+        <%= render 'partials/bids' %>
+      </p>
 
-<%= render 'comments/form', comment: @comment %>
+        <% @comments.each do |comment| %>
+          <p> <%= comment.user.email %> </p>
+          <p> <%= comment.created_at.strftime('%b %d, %Y') %> </p>
+          <p> <%= comment.content %> </p>
 
-<% @comments.each do |comment| %>
-  <p> <%= comment.user.email %> </p>
-  <p> <%= comment.created_at.strftime('%b %d, %Y') %> </p>
-  <p> <%= comment.content %> </p>
+        <% end %>
 
-<% end %>
+       </p>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+  <%= link_to 'Back', items_path %>

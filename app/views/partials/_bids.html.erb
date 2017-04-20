@@ -27,7 +27,7 @@
           <!-- <strong>
               Ends at:
           </strong> -->
-          <% l(@item.auction.end_at, format: :short) %>
+          <%= l(@item.auction.end_at, format: :short) %>
       </p>
 
       <div class="bgimg">
@@ -60,7 +60,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(countdownfunction);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+                document.getElementById("demo").innerHTML = "Auction Finished";
             }
         }, 1000);
       </script>
