@@ -68,10 +68,10 @@ class ItemsController < ApplicationController
   end
 
   def transfer
-    item = Item.find(params[:id])
-    if item.auction.ended?
-      item.update_attribute :user_id, item.auction.top_bid.user_id
-      redirect_to confirmation_charge_path, notice: "successfully transfered the product"
+    @item = Item.find(params[:id])
+    if @item.auction.ended?
+      @item.update_attribute :user_id, @item.auction.top_bid.user_id
+      redirect_to item_confirmation_path(@item), notice: "successfully transfered the product"
     else
       redirect_to item_path, notice: "the auction has not ended yet"
     end
