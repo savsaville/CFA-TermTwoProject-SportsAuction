@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @item.title %>
+    <strong>Title:</strong>
+    <%= @item.title %>
 </p>
 
 <%= image_tag @item.image.url(:medium) %>
 
 <p>
-  <strong>Description:</strong>
-  <%= @item.description %>
+    <strong>Description:</strong>
+    <%= @item.description %>
 </p>
 
 <%= render 'partials/auction' %>
@@ -18,10 +18,17 @@
 <%= render 'comments/form', comment: @comment %>
 
 <% @comments.each do |comment| %>
-  <p> <%= comment.user.email %> </p>
-  <p> <%= comment.created_at.strftime('%b %d, %Y') %> </p>
-  <p> <%= comment.content %> </p>
+<p>
+    <%= comment.user.email %>
+</p>
+<p>
+    <%= comment.created_at.strftime('%b %d, %Y') %>
+</p>
+<p>
+    <%= comment.content %>
+</p>
 <% end %>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Edit', edit_item_path(@item) %>
+|
 <%= link_to 'Back', items_path %>
