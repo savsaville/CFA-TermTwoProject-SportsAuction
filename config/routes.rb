@@ -5,17 +5,14 @@ Rails.application.routes.draw do
   post 'contact', to: "contact#mail"
 
   resources :items do
-      resources :auctions, only: [ :create ] do
-        resources :bids, only: [ :create ]
+    resources :auctions, only: [ :create ] do
+      resources :bids, only: [ :create ]
     end
     member do
       put :transfer
-      resources :charges do
-          member do
-            get 'confirmation', to: 'charges#confirmation'
-          end
-      end
     end
+    resources :charges
+    get 'confirmation', to: 'charges#confirmation'
     resources :comments
   end
 
