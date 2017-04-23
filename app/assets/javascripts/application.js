@@ -19,6 +19,8 @@
 
 $( document ).ready(function(){
 	$(".dropdown-button").dropdown();
+		belowOrigin: true,
+		hover: true,
 })
 
 
