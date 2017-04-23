@@ -59,6 +59,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    authorize @item
     @item.auction.destroy if @item.has_auction?
     @item.destroy
     respond_to do |format|
