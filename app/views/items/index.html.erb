@@ -28,7 +28,7 @@
         <td><%= image_tag item.image.url(:thumb) %></td>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
-        <td><%= item.auction.end_at.strftime('%A, %d %b %Y %l:%M %p')%></td>
+        <td></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
