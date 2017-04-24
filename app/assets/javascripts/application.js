@@ -17,15 +17,12 @@
 //= require materialize-sprockets
 
 
-$( document ).ready(function(){
-	$(".dropdown-button").dropdown();
-		belowOrigin: true,
-		hover: true,
-})
-
 
 	$(document).on('turbolinks:load', function() {
-		('.datepicker').pickadate({
-		    selectMonths: true, // Creates a dropdown to control month
-		    selectYears: 15 // C
+		// ('.datepicker').pickadate({
+		//     selectMonths: true, // Creates a dropdown to control month
+		//     selectYears: 15 // C
+		// });
+		$(".dropdown-button").dropdown();
+		// belowOrigin: true,
 	})

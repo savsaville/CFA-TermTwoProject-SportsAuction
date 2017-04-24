@@ -37,6 +37,7 @@
         <p id="demo"></p>
       </div>
       </div>
+
       <script>
 
 
@@ -65,9 +66,64 @@
         }, 1000);
       </script>
 
-      <%= f.text_field :value %>
-      <%= f.button 'Place Bid'%>
+      <%= f.text_field :value, id: "amount_field" %>
+
+      <%= f.button 'Place Bid' %>
 
       <% end %>
+
+
+      <p id="conversion_value"></p>
+
+      <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Convert</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content'>
+          <li><a href="#!" id="convert_btn" onClick="convert('NZD');return false;">$NZD</a></li>
+          <li><a href="#!" id="convert_btn" onClick="convert('USD');return false;">$USD</a></li>
+          <li><a href="#!" id="convert_btn" onClick="convert('GBP');return false;">$GBP</a></li>
+          <li><a href="#!" id="convert_btn" onClick="convert('EUR');return false;">€EUR</a></li>
+          <li><a href="#!" id="convert_btn" onClick="convert('CNY');return false;">¥CNY</a></li>
+          <li><a href="#!" id="convert_btn" onClick="convert('JPY');return false;">¥JPN</a></li>
+
+        </ul>
+
+
     <% end %>
   <% end %>
+
+
+
+
+
+<script>
+
+    // Load exchange rates data via AJAX:
+    $.getJSON(
+    	// : using Open Exchange Rates here, but you can use any source!
+        'https://openexchangerates.org/api/latest.json?app_id=777f4a4f9781470cb15730ed5f795ef0',
+        function(data) {
+            // Check money.js has finished loading:
+            if ( typeof fx !== "undefined" && fx.rates ) {
+                fx.rates = data.rates;
+                fx.base = data.base;
+            } else {
+                // If not, apply to fxSetup global:
+                var fxSetup = {
+                    rates : data.rates,
+                    base : data.base
+                }
+            }
+        }
+    );
+      //Convert To NZ Dollars
+    function convert(currency) {
+      // console.log($("#amount_field").val())
+      var amount = $("#amount_field").val();
+      var conversion = $(fx.convert(amount, {from: "AUD", to: currency}));
+      console.log(conversion);
+      $('#conversion_value').text(conversion[0]);
+    };
+
+      // convert();
+</script>
