@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post 'contact', to: "contact#mail"
 
+  get 'about_us', to: "pages#about_us"
+
   resources :items do
     resources :auctions, only: [ :create ] do
       resources :bids, only: [ :create ]
