@@ -24,5 +24,6 @@
 		//     selectYears: 15 // C
 		// });
 		$(".dropdown-button").dropdown();
+		$('select').material_select();
 		// belowOrigin: true,
 	})
