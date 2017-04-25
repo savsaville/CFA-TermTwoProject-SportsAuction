@@ -19,4 +19,8 @@ class User < ApplicationRecord
    def admin?
      has_role?(:admin)
    end
+
+   def hero?
+     has_role?(:hero)
+   end
 end
