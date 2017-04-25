@@ -7,11 +7,15 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? or not item.published?
+    @user.admin? or not item.published?
   end
 
   def destroy?
-   user.admin?
+   @user.admin?
+  end
+
+  def create?
+    @user.admin?
   end
 
   class Scope < Scope
