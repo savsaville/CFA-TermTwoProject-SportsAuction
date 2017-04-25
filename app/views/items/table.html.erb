@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Items</h1>
+
+<%= search_form_for @search do |f| %>
+  <div class="field green lighten-5">
+    <%= f.label :title_or_description_or_sport_or_charity_or_sponsor_cont, "Search for Something" %>
+    <%= f.text_field :title_or_description_or_sport_or_charity_or_sponsor_cont %>
+  </div>
+  <div class="actions green lighten-5"><%= f.submit "Search" %><div>
+<% end %>
+
+
+<table id="items">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= sort_link @search, :title, "Title" %></th>
+      <th><%= sort_link @search, :description, "Description" %></th>
+      <th><%= sort_link @search, :end_at, "Auction Closing Time" %></th>
+      <th><%= sort_link @search, :amount, "Auction Amount" %></th>
+      <th><%= sort_link @search, :sport, "Sport" %></th>
+      <th><%= sort_link @search, :charity, "Charity" %></th>
+      <th><%= sort_link @search, :sponsor, "Sponsor" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= image_tag item.image.url(:thumb) %></td>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= Time.at(100 + Time.now.to_f) %> </td>
+        <% if item.auction && item.auction.current_bid %>
+          <td><%= item.auction.current_bid %></td>
+        <% else %>
+          <td>Currently no Bids</td>
+        <% end %>
+        <td><%= item.sport %></td>
+        <td><%= item.charity %></td>
+        <td><%= item.sponsor %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

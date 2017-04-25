@@ -1,18 +1,18 @@
 
 <div class="row devise-top-margin">
-    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3" >
+    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable" >
         <h2 class="center-align button-space">Log in.</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="container">
             <div class="input-field">
                 <i class="material-icons prefix">email</i>
                 <%= f.label :email %>
-                <%= f.email_field :email, autofocus: false %>
+                <%= f.email_field :email %>
             </div>
             <div class="input-field">
                 <i class="material-icons prefix">lock_outline</i>
                 <%= f.label :password %>
-                <%= f.password_field :password, autocfocus: false %>
+                <%= f.password_field :password %>
             </div>
             <% if devise_mapping.rememberable? -%>
             <div class="input-field">
@@ -23,7 +23,7 @@
             <% end -%>
             <br>
             <div class="center-align" "devise-button">
-                <a class="waves-effect waves-light btn button-space button-width button-space-top"><%= f.submit "Log In" %></a>
+                <a class="waves-effect waves-light btn button-space button-width button-space-top green lighten-1"><%= f.submit "Log In" %></a>
             </div>
             <br>
             <div class="center-align" "devise-button">

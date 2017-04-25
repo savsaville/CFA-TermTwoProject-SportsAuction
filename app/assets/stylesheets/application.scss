@@ -25,9 +25,6 @@
   margin-top: 75px;
 }
 
-.devise {
-  font-family: 'Inconsolata', monospace;
-}
 // .grass1 {
 // // background-image: image("grass1.jpg");
 // position: absolute;
@@ -35,9 +32,14 @@
 // }
 
 html {
+  font-family: 'Inconsolata', monospace;
   background: url(grass1.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+}
+
+.slider {
+  margin-top: 100px;
 }

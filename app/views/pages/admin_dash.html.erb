@@ -7,8 +7,11 @@
     <tr>
       <th></th>
       <th>Title</th>
+      <th>Charity</th>
+      <th>Sport</th>
+      <th>Sponsor</th>
       <th>Description</th>
-      <th>Auction Amount $</th>
+      <th>Auction Amount</th>
     </tr>
   </thead>
   <% @items.each do |item| %>
@@ -16,6 +19,9 @@
       <tr>
         <td><%= image_tag item.image.url(:thumb) %></td>
         <td><%= item.title %></td>
+        <td><%= item.charity%></td>
+        <td><%= item.sport %></td>
+        <td><%= item.sponsor%></td>
         <td><%= item.description %></td>
         <% if item.auction && item.auction.current_bid %>
           <td><%= item.auction.current_bid %></td>

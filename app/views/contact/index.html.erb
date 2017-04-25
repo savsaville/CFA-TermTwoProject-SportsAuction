@@ -19,7 +19,7 @@
 
 
 <div class="row">
-    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3">
+    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5">
       <div class="center-align">
       <% if flash[:notice] %>
           <div class="notice"><%= flash[:notice] %></div>
@@ -28,7 +28,7 @@
         <% else %>
       <% end %>
       </div>
-        <h2 class="center-align button-space">Get in Touch</h2>
+        <h2 class="center-align button-space">Get in Touch.</h2>
         <%= simple_form_for :contact do |f| %>
         <div class="container">
             <div class="center-align">
@@ -44,7 +44,7 @@
                 <%= f.input_field :message %>
             </div>
             <div class="center-align" "devise-button">
-                <a class="waves-effect waves-light btn button-space button-width button-space-top"><%= f.submit "Send" %></a>
+                <a class="waves-effect waves-light btn button-space button-width button-space-top green lighten-1"><%= f.submit "Send" %></a>
             </div>
             <br>
         </div>
