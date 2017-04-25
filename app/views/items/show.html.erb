@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
 
 
@@ -7,7 +5,7 @@
   <div class="col s6 ">
     <p class="center-align" id="notice"><%= notice %></p>
     <h2> <%= @item.title %><span style="font-size:40px;"></h2>
-    <%= image_tag @item.image.url(:large), :class => "materialboxed" %>
+    <%= image_tag @item.image.url(:medium), :class => "materialboxed" %>
   </div>
 
   <% if @item.has_auction? %>
