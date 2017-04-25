@@ -1,0 +1,52 @@
+<h2>Admin Dash</h2>
+
+<p> Current Items Up for Auction </p>
+
+<table class="highlight centered">
+  <thead class="raleway">
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Auction Amount $</th>
+    </tr>
+  </thead>
+  <% @items.each do |item| %>
+    <tbody>
+      <tr>
+        <td><%= image_tag item.image.url(:thumb) %></td>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <% if item.auction && item.auction.current_bid %>
+          <td><%= item.auction.current_bid %></td>
+        <% else %>
+          <td>Currently no Bids</td>
+        <% end %>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
+<p>List of users</p>
+
+<table class="highlight centered">
+    <thead class="raleway">
+      <tr>
+        <th>User name</th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+      <tbody>
+        <tr>
+          <td><%= user.email %></td>
+          <td class="grey-link">
+            <%= link_to conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' do%>
+              <i class="material-icons">email</i>
+            <% end%>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>

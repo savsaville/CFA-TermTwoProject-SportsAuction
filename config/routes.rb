@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :bids
   get 'contact', to: "contact#index"
+  get 'admin_dash', to: "pages#admin_dash"
 
   post 'contact', to: "contact#mail"
 
