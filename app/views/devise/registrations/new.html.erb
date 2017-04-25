@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3">
+    <div class="col s6 devise devise-box-overflow z-depth-5 offset-m3 green lighten-5">
         <h2 class="center-align button-space">Sign Up.</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="container">
@@ -24,10 +24,10 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
             </div>
             <div class="center-align" "devise-button">
-                <a class="waves-effect waves-light btn button-space button-width button-space-top"><%= f.submit "Sign up" %></a>
+                <a class="waves-effect waves-light btn button-space button-width button-space-top green lighten-1"><%= f.submit "Sign up" %></a>
             </div>
             <br>
-            <div class="center-align" "devise-button">
+            <div class="center-align devise-button">
                 <%= render "devise/shared/links" %></a>
                 <br>
             </div>
