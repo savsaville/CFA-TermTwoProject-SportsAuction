@@ -1,49 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-    <strong>Title:</strong>
-    <%= @item.title %>
-</p>
+<div class="container">
 
-<%= image_tag @item.image.url(:medium) %>
 
-<p>
-    <strong>Description:</strong>
-    <%= @item.description %>
-</p>
+<div class="row devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+  <div class="col s6 ">
+    <p class="center-align" id="notice"><%= notice %></p>
+    <h2> <%= @item.title %><span style="font-size:40px;"></h2>
+    <%= image_tag @item.image.url(:large), :class => "materialboxed" %>
+  </div>
 
-<p>
-    <strong>Sport:</strong>
-    <%= @item.sport %>
-</p>
+  <% if @item.has_auction? %>
+  <% end %>
 
-<p>
-    <strong>Charity:</strong>
-    <%= @item.charity %>
-</p>
+  <div class="col m6">
+    <p>
+        <strong>Description:</strong>
+        <%= @item.description %>
+    </p>
+    <p>
+        <strong>Sport:</strong>
+        <%= @item.sport %>
+    </p>
 
-<p>
-    <strong>Sponsor:</strong>
-    <%= @item.sponsor %>
-</p>
+    <p>
+        <strong>Charity:</strong>
+        <%= @item.charity %>
+    </p>
 
-<%= render 'partials/auction' %>
-<%= render 'partials/bids' %>
+    <p>
+        <strong>Sponsor:</strong>
+        <%= @item.sponsor %>
+    </p>
+    <%= render 'partials/auction' %>
+    <%= render 'partials/bids' %>
 
-<%= render 'comments/form', comment: @comment %>
+    <%= render 'comments/form', comment: @comment %>
 
-<% @comments.each do |comment| %>
-<p>
-    <%= comment.user.email %>
-</p>
-<p>
-    <%= comment.created_at.strftime('%b %d, %Y') %>
-</p>
-<p>
-    <%= comment.content %>
-</p>
-<% end %>
+    <% @comments.each do |comment| %>
+    <p>
+        <%= comment.user.email %> at <%= comment.created_at.strftime('%b %d, %Y') %>
+    </p>
+    <p>
+        <%= comment.content %>
+    </p>
+    <% end %>
 
-<%= link_to 'Edit', edit_item_path(@item) %>
-|
-<%= link_to 'Back', items_path %>
+  <div class="right">
+    <%= link_to 'Edit |', edit_item_path(@item) if current_user.admin?%>
+    <%= link_to 'Back', item_path %>
+    </div>
+  </div>
+</div>
+</div>

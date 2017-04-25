@@ -1,18 +1,18 @@
 <div class="container green lighten-5">
   <div class="row center-align green lighten-5">
-      <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_item_path if (current_user && current_user.admin?) %></h2>
+      <h2><%= link_to 'New Auction', new_item_path if (current_user && current_user.admin?) %></h2>
   </div>
 
   <%= search_form_for @search do |f| %>
     <div class="row">
       <div class="col m4 offset-m3">
         <div class="field">
-          <%= f.label :title_or_sport_cont, "Title/Author contains" %>
-          <%= f.text_field :title_or_sport_cont %>
+          <%= f.label :title_or_description_or_sport_or_charity_or_sponsor_cont, "Search the Items" %>
+          <%= f.text_field :title_or_description_or_sport_or_charity_or_sponsor_cont %>
         </div>
       </div>
       <div class="col m3">
-        <div class="actions waves-effect waves-light btn button-smaller-top"><%= f.submit "Search" %></div>
+        <div class="actions waves-effect waves-light btn button-smaller-top green lighten-1"><%= f.submit "Search" %></div>
       </div>
     </div>
   <% end %>
