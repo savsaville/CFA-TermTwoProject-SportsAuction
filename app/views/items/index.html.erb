@@ -1,24 +1,25 @@
 <div class="container green lighten-5">
   <div class="row center-align green lighten-5">
-      <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_item_path if (current_user && current_user.admin?) %></h2>
   </div>
 
   <%= search_form_for @search do |f| %>
     <div class="row">
       <div class="col m4 offset-m3">
         <div class="field">
-          <%= f.label :title_or_sport_cont, "Title/Author contains" %>
-          <%= f.text_field :title_or_sport_cont %>
+          <%= f.label :title_or_description_or_sport_or_charity_or_sponsor_cont, "Search the Items" %>
+          <%= f.text_field :title_or_description_or_sport_or_charity_or_sponsor_cont %>
         </div>
       </div>
       <div class="col m3">
-        <div class="actions waves-effect waves-light btn button-smaller-top"><%= f.submit "Search" %></div>
+        <div class="actions waves-effect waves-light btn button-smaller-top green lighten-1"><%= f.submit "Search" %></div>
       </div>
+
     </div>
+
   <% end %>
 
 
-  <div class="contact-flash center-align raleway italic">
+  <div class="contact-flash center-align">
     <p><%= flash[:warning] %></p>
   </div>
 
@@ -31,11 +32,11 @@
             <div class="materialboxed">
               <%= image_tag item.image.url(:medium) %>
             </div>
-            <span class="card-title raleway-bold">
+            <span class="card-title ">
               <%= item.title %>
             </span>
           </div>
-          <div class="card-action raleway-bold">
+          <div class="card-action">
             <%= link_to item.title, item_path(item) %> <br>
           </div>
         </div>

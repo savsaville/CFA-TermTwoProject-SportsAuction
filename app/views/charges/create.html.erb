@@ -1,7 +1,13 @@
-<h2>Thanks, you paid <strong>$<%=@item.auction.current_bid %></strong></h2>
 
-<h2>This money will be going out to *enter charity potentially here*, while this amazing item will be shipped out to you.</h2>
+   <div class="container">
+     <div class="row">
+       <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5">
 
-<h2>Please click this button, and email us your address and we will ship it out to you as soon as we can.</h2>
+         <h4>Thanks, you paid <strong>$<%=@item.auction.current_bid %></strong></h4>
+         <h5>The money will be going out to the <strong><%=@item.charity %></strong> while this amazing item will be shipped out to you.</h5>
+           <h5>Please click the button below to message <strong> <%=@item.sponsor %></strong>.</h5>
 
-   <%= link_to "Contact Us", contact_path, class: "btn btn-primary", method: :put %>
+           <%= link_to "Message Centre", conversations_path, class: "btn btn-primary", method: :get %>
+         </div>
+       </div>
+     </div>

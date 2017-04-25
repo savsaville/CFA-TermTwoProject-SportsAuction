@@ -1,6 +1,15 @@
-<h1>You have been lucky enough to win this amazing item!</h1>
-<h3>Click on the button below to claim your prize</h3>
+<div class="container">
+  <div class="row">
+    <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5">
 
-<%= image_tag @item.image.url(:large) %>
+      <h4>You have been lucky enough to win this amazing item</h4>
+      <%= image_tag @item.image.url(:medium) %>
+      <h5>Click on the button below to claim your prize</h5>
+      <div class="align-center">
 
-<%= render 'partials/stripe' %>
+
+      <%= render 'partials/stripe' %>
+      </div>
+    </div>
+  </div>
+</div>

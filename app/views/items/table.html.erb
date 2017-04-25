@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Items</h1>
-
+<div class="container">
+  <div class="row field green lighten-5 col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
 <%= search_form_for @search do |f| %>
-  <div class="field green lighten-5">
+  <div class="field green lighten-5 col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
     <%= f.label :title_or_description_or_sport_or_charity_or_sponsor_cont, "Search for Something" %>
     <%= f.text_field :title_or_description_or_sport_or_charity_or_sponsor_cont %>
   </div>
-  <div class="actions green lighten-5"><%= f.submit "Search" %><div>
 <% end %>
 
 
@@ -48,7 +46,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+</div>
+</div>

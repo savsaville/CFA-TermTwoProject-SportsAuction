@@ -1,21 +1,20 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">AFL</a></li>
-  <li><a href="#!">Rugby Union</a></li>
-  <li><a href="#!">Rugby League</a></li>
-  <li><a href="#!">Soccer</a></li>
+  <li><a href="/table">AFL</a></li>
+  <li><a href="/table">Rugby Union</a></li>
+  <li><a href="/table">Rugby League</a></li>
+  <li><a href="/table">Soccer</a></li>
 </ul>
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo"><i class="material-icons">accessibility</i>Grassroots. Giving Back.</a>
-    <ul class="right hide-on-med-and-down">
-       <li><a href="/items"><i class="material-icons left">person_outline</i>Account</a></li>
-       <li><a href="/items"><i class="material-icons left">timer</i>Closing Soon</a></li>
-       <li><a href="/about_us"><i class="material-icons left">mood</i>About Us</a></li>
+    <a href="/" class="brand-logo"><i class="material-icons hide-on-med-and-down"></i>Grassroots. Giving Back.</a>
+    <ul class="right ">
+       <li><a href="/items"><i class="material-icons left">gavel</i>Auctions</a></li>
+       <li><a href="/conversations"><i class="material-icons left">person_outline</i>Messaging</a></li>
        <li><a href="/contact"><i class="material-icons left">mail</i>Contact Us</a></li>
-
+       <li><%= link_to 'New Auction', new_item_path if (current_user && current_user.admin?) %></li>
       <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Auctions<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Catergories<i class="material-icons right">arrow_drop_down</i></a></li>
 
       <li><% if user_signed_in? %>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>

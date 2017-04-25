@@ -1,29 +1,57 @@
-<div class="ui segment">
- <h3>Mailbox</h3>
- <div class="ui list">
-  <div class=”item”>
-   <% @conversations.each do |conversation| %>
-   <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
-    <% if conversation.sender_id == current_user.id %>
-      <% recipient = User.find(conversation.recipient_id) %>
-    <% else %>
-      <% recipient = User.find(conversation.sender_id) %>
-    <% end %>
-    <%= link_to recipient.email,   conversation_messages_path(conversation)%>
-   <% end %>
+<div class="container">
+
+
+<ul class="row">
+    <li class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+      <h2 class="center-align button-space">Message Centre.</h2>
+      <div><i class="material-icons">email</i>Inbox.</div>
+          <div class="ui list center-align">
+            <% @conversations.each do |conversation| %>
+              <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+                <% if conversation.sender_id == current_user.id %>
+                  <% recipient = User.find(conversation.recipient_id) %>
+                <% else %>
+                  <% recipient = User.find(conversation.sender_id) %>
+                <% end %>
+                <% first_message = conversation.messages.first %>
+                  <span><%= recipient.email %></span> <br>
+                  <%= link_to 'Inbox |', conversation_messages_path(conversation)%>
+                  <%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </span></div>
+    </li>
+    <% if current_user.admin? %>
+    <div class="container row">
+      <li class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+        <div><i class="material-icons">perm_identity</i>All Users.</div>
+          <span>
+            <div class="ui segment">
+              <div class="ui list center-align">
+                <% @users.each do |user| %>
+                  <% if user.id != current_user.id %>
+                  <div class="button-space divider-div">
+                    <strong><%= user.email %></strong> <br> <%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+      </li>
+      <% end %>
+  </ul>
+
+<div class="right button-space">
+  <% if current_user.admin? %>
+    <%= link_to 'Back', admin_dash_path %>
   <% end %>
-  </div>
- </div>
 </div>
-<div class="ui segment">
- <h3>All Users</h3>
-  <div class="ui list">
-   <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-     <div class="item">
-   <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
- </div>
-  <% end %>
- <% end %>
- </div>
+
+
 </div>

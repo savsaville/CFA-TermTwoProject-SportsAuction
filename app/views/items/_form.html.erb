@@ -11,46 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <div class="row">
+      <div class="col s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5">
+          <h2 class="center-align button-space">New Item.</h2>
+          <%= form_for @item, html: { multipart: true } do |f| %>
+            <% if item.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+                <ul>
+                <% item.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+          <div class="container">
+              <div class="input-field">
+                  <%= f.label :title %>
+                  <%= f.text_field :title %>
+              </div>
+              <div class="field">
+                <%= f.label :image %>
+                <%= f.file_field :image %>
+              </div>
+              <div class="field">
+                <%= f.label :description %>
+                <%= f.text_area :description %>
+              </div>
+              <div class="field">
+                <%= f.label :sport %>
+                <%= f.text_area :sport%>
+              </div>
+              <div class="field">
+                <%= f.label :charity%>
+                <%= f.text_area :charity %>
+              </div>
+              <div class="field">
+                <%= f.label :sponsor %>
+                <%= f.text_area :sponsor %>
+              </div>
+              <div class="center-align" "devise-button">
+                  <a class="waves-effect waves-light btn button-space button-width button-space-top green lighten-1"><%= f.submit "Create" %></a>
+              </div>
+              <br>
+          </div>
+          <% end %>
+      </div>
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sport %>
-    <%= f.text_area :sport%>
-  </div>
-
-  <div class="field">
-    <%= f.label :charity%>
-    <%= f.text_area :charity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sponsor %>
-    <%= f.text_area :sponsor %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :starting_price %>
-    <%= f.number_field :starting_price %>
-  </div> -->
-
-  <!-- <div class="field">
-    <%= f.label :end_time %>
-    <%= f.datetime_select :end_time %>
-  </div> -->
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>
