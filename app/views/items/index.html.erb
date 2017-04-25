@@ -1,54 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Items</h1>
-
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :title_or_description_or_sport_or_charity_or_sponsor_cont, "Searchy" %>
-    <%= f.text_field :title_or_description_or_sport_or_charity_or_sponsor_cont %>
+<div class="container green lighten-5">
+  <div class="row center-align green lighten-5">
+      <h2 class="raleway"><%= link_to 'Place an item up for Auction', new_item_path if (current_user && current_user.admin?) %></h2>
   </div>
-  <div class="actions"><%= f.submit "Search" %><div>
-<% end %>
+
+  <%= search_form_for @search do |f| %>
+    <div class="row">
+      <div class="col m4 offset-m3">
+        <div class="field">
+          <%= f.label :title_or_sport_cont, "Title/Author contains" %>
+          <%= f.text_field :title_or_sport_cont %>
+        </div>
+      </div>
+      <div class="col m3">
+        <div class="actions waves-effect waves-light btn button-smaller-top"><%= f.submit "Search" %></div>
+      </div>
+    </div>
+  <% end %>
 
 
-<table id="items">
-  <thead>
-    <tr>
-      <th></th>
-      <th><%= sort_link @search, :title, "Title" %></th>
-      <th><%= sort_link @search, :description, "Description" %></th>
-      <th><%= sort_link @search, :end_at, "Auction Closing Time" %></th>
-      <th><%= sort_link @search, :amount, "Auction Amount" %></th>
-      <th><%= sort_link @search, :sport, "Sport" %></th>
-      <th><%= sort_link @search, :charity, "Charity" %></th>
-      <th><%= sort_link @search, :sponsor, "Sponsor" %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="contact-flash center-align raleway italic">
+    <p><%= flash[:warning] %></p>
+  </div>
 
-  <tbody>
+  <p id="notice"><%= notice %></p>
+  <div class="row">
     <% @items.each do |item| %>
-      <tr>
-        <td><%= image_tag item.image.url(:thumb) %></td>
-        <td><%= item.title %></td>
-        <td><%= item.description %></td>
-        <td><%= Time.at(100 + Time.now.to_f) %> </td>
-        <% if item.auction && item.auction.current_bid %>
-          <td><%= item.auction.current_bid %></td>
-        <% else %>
-          <td>Currently no Bids</td>
-        <% end %>
-        <td><%= item.sport %></td>
-        <td><%= item.charity %></td>
-        <td><%= item.sponsor %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col s5 m4 center-align picture-card green lighten-5">
+        <div class="card hoverable">
+          <div class="card-image photo-size">
+            <div class="materialboxed">
+              <%= image_tag item.image.url(:medium) %>
+            </div>
+            <span class="card-title raleway-bold">
+              <%= item.title %>
+            </span>
+          </div>
+          <div class="card-action raleway-bold">
+            <%= link_to item.title, item_path(item) %> <br>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+  </div>

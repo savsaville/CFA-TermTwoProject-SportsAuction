@@ -25,5 +25,6 @@
 		// });
 		$(".dropdown-button").dropdown();
 		$('select').material_select();
-		// belowOrigin: true,
+		// belowOrigin: true,\
+		$('.slider').slider();
 	})
