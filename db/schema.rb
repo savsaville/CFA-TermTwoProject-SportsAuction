@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423072120) do
+ActiveRecord::Schema.define(version: 20170425055435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,9 @@ ActiveRecord::Schema.define(version: 20170423072120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "end_at"
+    t.string   "slug"
     t.index ["item_id"], name: "index_auctions_on_item_id", using: :btree
+    t.index ["slug"], name: "index_auctions_on_slug", unique: true, using: :btree
   end
 
   create_table "bids", force: :cascade do |t|
@@ -54,6 +56,18 @@ ActiveRecord::Schema.define(version: 20170423072120) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -66,6 +80,13 @@ ActiveRecord::Schema.define(version: 20170423072120) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.string   "slug"
+    t.integer  "item_id"
+    t.string   "sport"
+    t.string   "charity"
+    t.string   "sponsor"
+    t.index ["item_id"], name: "index_items_on_item_id", using: :btree
+    t.index ["slug"], name: "index_items_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
@@ -119,5 +140,6 @@ ActiveRecord::Schema.define(version: 20170423072120) do
   add_foreign_key "bids", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "items", "items"
   add_foreign_key "items", "users"
 end
