@@ -27,4 +27,5 @@
 		$('select').material_select();
 		// belowOrigin: true,\
 		$('.slider').slider();
+		$('.parallax').parallax();
 	})

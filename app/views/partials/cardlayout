@@ -119,3 +119,218 @@
   <br>
 
   <%= link_to 'New Item', new_item_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+
+          <div class="slider">
+              <ul class="slides">
+                <li>
+                  <img src="http://res.cloudinary.com/savscloud/image/upload/v1493117417/sbwgirl_goib8w.jpg" alt="">
+                  <div class="caption left-align">
+                    <h3 class="white-text">A platform that reaches out to kids.</h3>
+                  </div>
+                </li>
+                <li>
+                  <img src="http://res.cloudinary.com/savscloud/image/upload/v1493122930/sbwAB_rnkftz.jpg" alt="">
+                  <div class="caption left-align">
+                    <h3 class="white-text">Where the heroes of today...</h3>
+                  </div>
+                </li>
+                <li>
+                  <img src="http://res.cloudinary.com/savscloud/image/upload/v1493117415/sbw_cue4b6.jpg" alt="">
+                  <div class="caption right-align">
+                    <h3 style="white text">...can help the heroes of tomorrow</h3>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <br>
+      </div>
+      <div class="parallax"><img src="http://res.cloudinary.com/savscloud/image/upload/v1493114061/Grass-Textures-for-Designers8_vwq4a9.jpg" alt="Unsplashed background img 1"></div>
+      <br>
+      <br>
+    </div>
+
+
+    <div class="container">
+      <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="row center">
+            <h2 class="col s12 m12 l12 center header text_h2 align-center center-align"> Grassroots is an auction platform where 100% of the proceeds are invested in the growth and development of sport, and it's surrounding communities.</h2>
+          </div>
+          <!-- <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+              <h5 class="center">Helping Communities</h5>
+
+              <p class="light">With the proceeds going to local communities and sports groups, facilities and infastructure will improve significantly and provide an excellent base for future sports.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+              <h5 class="center">Helping Kids</h5>
+
+              <p class="light">This will in turn increase participation and get more kids playing organised sport, along with the physical and psychological benefits that go with it. </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+              <h5 class="center">Helping Sport</h5>
+
+              <p class="light">The stars will get added visibility and goodwill whilst donating their merchandise and coaching sessions, which will help promote both the individual and the organisation they represent. </p>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h2 class="col s12 m12 l12 center header text_h2 align-center center-align"> Grassroots is an auction platform where 100% of the proceeds are invested in the growth and development of sport, and it's surrounding communities.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="http://res.cloudinary.com/savscloud/image/upload/v1493114061/Grass-Textures-for-Designers8_vwq4a9.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+              <h5 class="center">Helping Communities</h5>
+
+              <p class="light">With the proceeds going to local communities and sports groups, facilities and infastructure will improve significantly and provide an excellent base for future sports.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+              <h5 class="center">Helping Kids</h5>
+
+              <p class="light">This will in turn increase participation and get more kids playing organised sport, along with the physical and psychological benefits that go with it. </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+              <h5 class="center">Helping Sport</h5>
+
+              <p class="light">The stars will get added visibility and goodwill whilst donating their merchandise and coaching sessions, which will help promote both the individual and the organisation they represent. </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="http://res.cloudinary.com/savscloud/image/upload/v1493114061/Grass-Textures-for-Designers8_vwq4a9.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+
+
+<div id="intro" class="section">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+
+            </div>
+
+            <div  class="col s12 m4 l4">
+                <div class="center promo center promo card z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+                    <i class="card-content white-text"></i>
+                    <h5 class="card-title">Helping Communities</h5>
+                    <p class="light center">With the proceeds going to local communities and sports groups, facilities and infastructure will improve significantly and provide an excellent base for future sports.</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo card z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+                    <i class="card-content white-text"></i>
+                    <h5 class="card-title">Helping Kids</h5>
+                    <p class="light center">This will in turn increase participation and get more kids playing organised sport, along with the physical and psychological benefits that go with it. </p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo card z-depth-4 offset-m3 green lighten-5 card-panel hoverable">
+                    <i class="card-content white-text"></i>
+                    <h5 class="card-title">Helping Sport</h5>
+                    <p class="light center">The stars will get added visibility and goodwill whilst donating their merchandise and coaching sessions, which will help promote both the individual and the organisation they represent. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer transparent">
+          <div class="footer-copyright">
+            <div class="container black-text">
+            2017 Blank Canvas Ltd
+            <a class="black-text text-lighten-4 right" href="https://github.com/savsaville/CFA-TermTwoProject-SportsAuction">See More</a>
+            </div>
+          </div>
+        </footer>

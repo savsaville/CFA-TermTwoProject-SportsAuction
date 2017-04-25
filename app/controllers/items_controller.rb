@@ -9,6 +9,11 @@ class ItemsController < ApplicationController
     @items = @search.result(distinct: true)
   end
 
+  def table
+    @items = Item.all
+    @search = Item.ransack(params[:q])
+    @items = @search.result(distinct: true)
+  end
   # GET /items/1
   # GET /items/1.json
   def show
