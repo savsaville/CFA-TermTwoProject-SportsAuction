@@ -65,6 +65,8 @@ I wanted to build a platform that enabled established stars to give back to thei
 I have seen firsthand the positive effects that sport can have on kids once they are able to play and have fun in a structured format. This will allow kids who are not as fortunate as others to be able to participate.
 It will also be an opportunity to promote individuals and their sports as the goodwill generated will be a huge boost for everyone.
 
+![20170413_121457](https://cloud.githubusercontent.com/assets/20296459/25412661/c41c0dd8-2a67-11e7-85c7-93fec57ccaf2.jpg)
+![20170411_181140](https://cloud.githubusercontent.com/assets/20296459/25412662/c5bb22c8-2a67-11e7-9d30-967eaecf18e5.jpg)
 ![screen shot 2017-04-26 at 9 29 52 am](https://cloud.githubusercontent.com/assets/20296459/25412640/a0d733e8-2a67-11e7-9a26-2742ba73b3a3.png)
 ![screen shot 2017-04-26 at 9 30 02 am](https://cloud.githubusercontent.com/assets/20296459/25412642/a1bc6f12-2a67-11e7-87de-7ebe2ef5042b.png)
 ![screen shot 2017-04-26 at 9 30 29 am](https://cloud.githubusercontent.com/assets/20296459/25412643/a3676240-2a67-11e7-822f-6e813cb88aba.png)
@@ -74,8 +76,7 @@ The auction part of the application was the hardest to do as it involved various
 The other various rails implementations all had there challenges but it was not until the design that I had trouble.
 
 ![screen shot 2017-04-26 at 9 31 16 am](https://cloud.githubusercontent.com/assets/20296459/25412644/a4e47cd4-2a67-11e7-9072-5125e12fb352.png)
-![20170413_121457](https://cloud.githubusercontent.com/assets/20296459/25412661/c41c0dd8-2a67-11e7-85c7-93fec57ccaf2.jpg)
-![20170411_181140](https://cloud.githubusercontent.com/assets/20296459/25412662/c5bb22c8-2a67-11e7-9d30-967eaecf18e5.jpg)
+
 PRESENTATION
 PROBLEMS
 ISSUES
