@@ -75,10 +75,10 @@
 
 
 
-      <!-- <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Convert</a> -->
+      <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Convert</a>
 
-        <!-- Dropdown Structure -->
-        <!-- <ul id='dropdown2' class='dropdown-content'>
+        <Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content'>
           <li><a href="#!" id="convert_btn" onClick="convert('NZD');return false;">$NZD</a></li>
           <li><a href="#!" id="convert_btn" onClick="convert('USD');return false;">$USD</a></li>
           <li><a href="#!" id="convert_btn" onClick="convert('GBP');return false;">$GBP</a></li>
@@ -86,9 +86,9 @@
           <li><a href="#!" id="convert_btn" onClick="convert('CNY');return false;">¥CNY</a></li>
           <li><a href="#!" id="convert_btn" onClick="convert('JPY');return false;">¥JPN</a></li>
 
-        </ul> -->
-
-          <div class="input-field col s12">
+        </ul>
+        <p id="conversion_value"></p>
+          <!-- <div class="input-field col s12">
               <select>
                 <option value="" disabled selected>Choose Currency to Convert To:</option>
                 <option><a href="#!" id="convert_btn" onClick="convert(currency);return false;">$NZD</a></option>
@@ -97,15 +97,15 @@
                 <option value="4">€EUR</option>
                 <option value="5">¥CNY</option>
                 <option value="6">¥JPN</option>
-            </select>
+            </select> -->
 
-          <%= f.button 'place conversion', id:"convert_btn", onClick:"convert('NZD');return false;", :class => "btn" %>
-          <p id="conversion_value"></p>
+          <%#= f.button 'place conversion', id:"convert_btn", onClick:"convert('NZD');return false;", :class => "btn" %>
 
-          <% end %>
-            </div>
 
-    <% end %>
+          <%# end %>
+            <!-- </div> -->
+
+    <!-- <% end %> -->
   <% end %>
 
 
@@ -143,3 +143,4 @@
 
       // convert();
 </script>
+<% end %>
