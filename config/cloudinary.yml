@@ -3,7 +3,7 @@ development:
   api_key: <%= ENV["cloud_api_key"] %>
   api_secret: <%= ENV["cloud_api_secret"] %>
   enhance_image_tag: true
-  static_image_support: false
+  static_image_support: true
 production:
   cloud_name: <%= ENV["cloud_name"] %>
   api_key: <%= ENV["cloud_api_key"] %>
@@ -15,4 +15,4 @@ test:
   api_key: <%= ENV["cloud_api_key"] %>
   api_secret: <%= ENV["cloud_api_secret"] %>
   enhance_image_tag: true
-  static_image_support: false
+  static_image_support: true
