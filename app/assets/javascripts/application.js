@@ -28,4 +28,5 @@
 		// belowOrigin: true,\
 		$('.slider').slider();
 		$('.parallax').parallax();
+		$(".button-collapse").sideNav();
 	})
